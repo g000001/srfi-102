@@ -13,7 +13,8 @@
 
 (defun procedure-arity (proc)
   (let ((args (#+sbcl sb-introspect:function-lambda-list
-               #-sbcl not-implemented
+               #+LispWorks lw:function-lambda-list
+               #-(:or sbcl LispWorks) not-implemented
                proc)))
     (etypecase args
       (null 0)

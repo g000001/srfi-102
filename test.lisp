@@ -13,8 +13,14 @@
   (is-false (procedure-arity-includes? #'cl:cons 1))
   (is-true (arity-at-least? (procedure-arity #'cl:list)))
   (is-false (arity-at-least? (procedure-arity #'cl:cons)))
-  (signals (cl:type-error)
+  #-LispWorks
+  (signals (error)
     (arity-at-least-value (procedure-arity #'cl:cons)))
+  #+LispWorks (is-true
+               (subtypep
+                (handler-case (arity-at-least-value (procedure-arity #'cl:cons))
+                  (cl:error (c) (type-of c)))
+                'cl:error))
   (is (zerop (arity-at-least-value (procedure-arity #'cl:list)))))
 
 ;;; eof
