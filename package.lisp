@@ -6,6 +6,7 @@
   (:use)
   (:export :procedure-arity
            :arity-at-least?
+           :arity-at-least
            :arity-at-least-value
            :procedure-arity-includes?))
 
