@@ -5,7 +5,7 @@
 (defstruct (arity-at-least
             (:predicate arity-at-least?)
             (:conc-name ""))
-  arity-at-least-value)
+  (arity-at-least-value 0 :read-only T))
 
 (defmethod print-object ((obj arity-at-least) stream)
   (print-unreadable-object (obj stream :type T)
