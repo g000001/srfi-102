@@ -1,14 +1,21 @@
 ;;;; package.lisp
 
-(cl:in-package :cl-user)
+(cl:in-package cl-user)
 
-(defpackage :srfi-102
+
+(defpackage "https://github.com/g000001/srfi-102"
   (:use)
-  (:export :procedure-arity
-           :arity-at-least?
-           :arity-at-least
-           :arity-at-least-value
-           :procedure-arity-includes?))
+  (:export procedure-arity
+           arity-at-least?
+           arity-at-least
+           arity-at-least-value
+           procedure-arity-includes?))
 
-(defpackage :srfi-102.internal
-  (:use :srfi-102 :cl :fiveam))
+
+(defpackage "https://github.com/g000001/srfi-102#internals"
+  (:use "https://github.com/g000001/srfi-102"
+        cl 
+        fiveam))
+
+
+;;; *EOF*

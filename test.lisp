@@ -1,8 +1,8 @@
-(cl:in-package :srfi-102.internal)
+(cl:in-package "https://github.com/g000001/srfi-102#internals")
 
-(def-suite srfi-102)
 
-(in-suite srfi-102)
+(def-suite* srfi-102)
+
 
 (test srfi-102
   (for-all ((n (gen-integer :min 0)))
@@ -23,4 +23,6 @@
                 'cl:error))
   (is (zerop (arity-at-least-value (procedure-arity #'cl:list)))))
 
-;;; eof
+
+;;; *EOF*
+

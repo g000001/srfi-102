@@ -1,4 +1,5 @@
-* SRFI-102: Procedure Arity Inspection
+# SRFI 102 for CL: Procedure Arity Inspection
+
 - Copyright (C) David Van Horn 2009. All Rights Reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining
